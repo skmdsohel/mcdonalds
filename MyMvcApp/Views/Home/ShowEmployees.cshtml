@@ -1,0 +1,50 @@
+﻿@model List<MyMvcApp.Models.EmpTable>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta  name="viewport" content="width=device-width"/>
+    <title>AllEmployees</title>
+</head>
+<body style="text-align:center">
+
+    <h1>Registered Employees</h1>
+    <br />
+    <br />
+    <br />
+    <div>
+        <table border="1" width="100%">
+            <tr style="text-align:center">
+                <th>ID</th>
+                <th>NAME</th>
+                <th>ADDRESS</th>
+                <th>SALARY</th>
+                <th>EDIT DETAILS</th>
+                <th>DELETE RECORD</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EmpId</td>
+                    <td>@item.EmpName</td>
+                    <td>@item.EmpAddress</td>
+                    <td>@item.EmpSalary</td>
+                    <td>@Html.ActionLink("Edit", "Find", new { id = item.EmpId })</td>
+                    <td>@Html.ActionLink("Delete", "DeleteEmployee", new { id = item.EmpId })</td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    <nav>
+        <div>
+            <h3>@Html.ActionLink("New Registration", "AddEmployee")</h3>
+        </div>
+    </nav>
+</body>
+</html>
+

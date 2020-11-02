@@ -1,0 +1,28 @@
+﻿@model MyMvcApp.Models.EmpTable
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Find</title>
+</head>
+<body style="text-align:center">
+    <h1> Update Employee Details </h1>
+    <br />
+    <br />
+    <br />
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>Enter the Emp ID: @Html.EditorFor((m) => m.EmpId)</p>
+            <p>Enter the Emp Name: @Html.EditorFor((m) => m.EmpName)</p>
+            <p>Enter the Emp Address: @Html.EditorFor((m) => m.EmpAddress)</p>
+            <p>Enter the Emp Salay: @Html.EditorFor((m) => m.EmpSalary)</p>
+            <button>Save Changes</button>
+        }
+    </div>
+</body>
+</html>
