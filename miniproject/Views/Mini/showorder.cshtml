@@ -1,0 +1,99 @@
+﻿@model  List<miniproject.Models.order>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <center>
+        <style>
+            body{
+                background-color:lightseagreen;
+            }
+         
+           @* button:link, button:visited {
+                background-color: #f44336;
+                color: white;
+                padding: 20pt 30pt;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+          
+                font-size:15pt;
+
+            }
+            .button{
+                width:100%;
+                text-align:center;
+                margin:0 auto;
+            }*@
+
+            .button {
+                width: 30%;
+                background-color:aqua;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                text-decoration:none;
+                color :white;
+            }
+            table, th, td {
+                border: 1px solid red;
+                background-color:navajowhite;
+            }
+            
+            
+        </style>
+        <meta name="viewport" content="width=device-width" />
+        <title>showorder</title>
+    </center>
+</head>
+<body>
+    <img src="~/images/d1.jpg" width="400" height="350" style="vertical-align:bottom" />
+    <img src="~/images/d2.jpg" width="400" height="350" style="vertical-align:bottom" />
+    <img src="~/images/d3.jpg" width="400" height="350" style="vertical-align:bottom" />
+
+    <h3>List of All Orders with Us!!!</h3>
+    <hr />
+    <div>
+        <table border="1" width="100%">
+            <tr>
+                <th>Item ID</th>
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>customer id</th>
+                <td>customer name</td>
+            </tr>
+            @foreach (var ord in Model)
+            {
+                <tr>
+                    <td>@ord.item_id</td>
+                    <td>@ord.item_name</td>
+                    <td>@ord.price</td>
+                    <td>@ord.cust_id</td>
+                    <td>@ord.cust_name</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Find", new { id = ord.cust_id })
+
+                        @Html.ActionLink("X", "Delete", new { id = ord.cust_id })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <br><br />
+
+    <div class="button">
+    @Html.ActionLink("New Order", "Neworders")
+  </div>
+</body>
+</html>
+ 
+   

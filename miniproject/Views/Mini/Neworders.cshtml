@@ -1,0 +1,51 @@
+﻿@model miniproject.Models.order
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Neworders</title>
+    <style>
+        body{
+            background-color:darkslategray;
+        }
+        p,h1 {
+            color:cornsilk;
+        }
+    </style>
+</head>
+<body style="text-align:center;margin:auto">
+    <h1>New Order</h1>
+    <hr />
+    <div>
+        <img src="~/images/a2.jpg" width="420" height="300" style="vertical-align:bottom">
+        
+    </div>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>
+                Enter the CustID: @Html.EditorFor((m) => m.cust_id)
+            </p>
+            <p>
+                Enter the CustName: @Html.EditorFor((m) => m.cust_name)
+            </p>
+            <p>
+                Enter the Price: @Html.EditorFor((m) => m.price)
+            </p>
+            <p>
+                Enter the ItemId: @Html.EditorFor((m) => m.item_id)
+            </p>
+            <p>
+                Enter the ItemName: @Html.EditorFor((m) => m.item_name)
+            </p>
+            <button>Place order</button>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿@model miniproject.Models.order
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Find</title>
+    <style>
+        body {
+            background-color:gray;
+        }
+
+        p, h1 {
+            color: cornsilk;
+        }
+    </style>
+</head>
+<body style="text-align:center;margin:auto">
+    <h1>Details to update</h1>
+    <div>
+        <img src="~/images/a3.jpg" width="320" height="250" style="vertical-align:bottom">
+
+    </div>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>
+                Enter the custid: @Html.EditorFor((m) => m.cust_id)
+            </p>
+            <p>
+                Enter the custname: @Html.EditorFor((m) => m.cust_name)
+            </p>
+            <p>
+                Enter the Price: @Html.EditorFor((m) => m.price)
+            </p>
+            <p>
+                Enter the itemname: @Html.EditorFor((m) => m.item_name)
+            </p>
+            <p>
+                Enter the itemid: @Html.EditorFor((m) => m.item_id)
+            </p>
+            <button>Save Changes</button>
+        }
+    </div>
+</body>
+</html>
